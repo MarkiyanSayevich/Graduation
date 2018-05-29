@@ -1,9 +1,15 @@
 package com.home.entity;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.home.entity.gender.Gender;
@@ -46,4 +52,19 @@ public class Patient extends BaseEntity{
 	
 	@Column(name="registration_date")
 	private LocalDate registrationDate;
+	
+	@OneToMany(mappedBy="patient")
+	List<AdmissionsJournal> admissionsJournals = new ArrayList<>();
+	
+	@OneToMany(mappedBy="patient",cascade = CascadeType.ALL)
+	List<Examination> examinations = new ArrayList<>();
+	
+	@ManyToOne(cascade = {
+			CascadeType.DETACH, 
+			CascadeType.MERGE,	
+			CascadeType.PERSIST,
+			CascadeType.REFRESH
+		})
+	@JoinColumn(name="insuranceCompany_id")
+	private InsuranceCompany insuranceCompany;
 }
