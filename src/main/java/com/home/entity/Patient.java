@@ -2,6 +2,7 @@ package com.home.entity;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,8 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.home.entity.gender.Gender;
-import com.home.entity.gender.PatientStatus;
+import com.home.entity.enums.Gender;
+import com.home.entity.enums.PatientStatus;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

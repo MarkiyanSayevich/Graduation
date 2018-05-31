@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
-	<h2>Hello here is the main page</h2>
-	
+
+	<h3> Success </h3>
+
 </body>
 </html>

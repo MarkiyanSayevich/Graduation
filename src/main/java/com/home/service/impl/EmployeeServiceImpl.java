@@ -12,6 +12,7 @@ import com.home.service.EmployeeService;
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
+
 	@Autowired EmployeeRepository employeeRepos;
 	
 	@Override
@@ -29,4 +30,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return employeeRepos.findAll();
 	}
 
+	@Override
+	public Employee findEmployeeByLogin(String login) {
+		return employeeRepos.findEmployeeByLogin(login);
+	}
 }

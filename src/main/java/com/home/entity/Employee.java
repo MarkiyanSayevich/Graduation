@@ -7,7 +7,10 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -63,4 +66,8 @@ public class Employee extends BaseEntity{
 			CascadeType.REFRESH
 		})
 	private List<AdmissionsJournal> admissionsJournals = new ArrayList<>();
+	
+	@OneToOne(cascade = CascadeType.ALL , fetch = FetchType.EAGER)
+	@JoinColumn(name = "employee_info_id")
+	private EmployeeInfo employeeInfo;
 }

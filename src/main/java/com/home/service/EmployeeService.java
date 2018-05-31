@@ -11,4 +11,6 @@ public interface EmployeeService {
 	Employee getOneEmployee(int id);
 	
 	List<Employee> findAllEmployee();
+	
+	Employee findEmployeeByLogin(String login);
 }
