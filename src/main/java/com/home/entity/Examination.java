@@ -2,7 +2,6 @@ package com.home.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -35,10 +34,10 @@ public class Examination extends BaseEntity {
 	private BigDecimal price;
 	
 	@Column(name="instruments")
-	private String[] instruments;
+	private String instruments;
 	
 	@Column(name="methods")
-	private String[] methods;
+	private String methods;
 	
 	@Column(name="conclusion")
 	private String conclusion;
@@ -61,4 +60,13 @@ public class Examination extends BaseEntity {
 		})
 	@JoinColumn(name="patient_id")
 	private Patient patient;
+	
+	@ManyToOne(cascade = {
+			CascadeType.DETACH, 
+			CascadeType.MERGE,	
+			CascadeType.PERSIST,
+			CascadeType.REFRESH
+		})
+	@JoinColumn(name="employee_id")
+	private Employee employee;
 }

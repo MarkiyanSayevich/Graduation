@@ -4,7 +4,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.home.entity.AdmissionsJournal;
+import com.home.entity.EmployeeInfo;
+import com.home.entity.Examination;
 
 import lombok.Data;
 
@@ -25,19 +26,11 @@ public class EmployeeDto {
 	
 	private String position;
 	
-	private String department;
-	
-	private String[] wards;
-	
 	private LocalDate registrationDate;
 	
 	private boolean theRightToWorkWithDatabase;
 	
-	private List<AdmissionsJournal> admissionsJournals = new ArrayList<>();
+	private List<Examination> examinations = new ArrayList<>();
 	
-	private String imageName;
-	
-	private String login;
-	
-	private String password;
+	private EmployeeInfo employeeInfo;
 }

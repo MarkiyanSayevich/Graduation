@@ -8,9 +8,11 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.home.entity.enums.Gender;
@@ -48,13 +50,10 @@ public class Patient extends BaseEntity{
 	@Column(name="patient_status")
 	private PatientStatus patientStatus;
 	
-	@Column(name="diagnosis")
-	private String diagnosis;
-	
 	@Column(name="registration_date")
 	private LocalDate registrationDate;
 	
-	@OneToMany(mappedBy="patient")
+	@OneToMany(mappedBy="patient",cascade = CascadeType.ALL)
 	List<AdmissionsJournal> admissionsJournals = new ArrayList<>();
 	
 	@OneToMany(mappedBy="patient",cascade = CascadeType.ALL)

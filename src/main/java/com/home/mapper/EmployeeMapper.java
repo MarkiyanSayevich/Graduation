@@ -1,10 +1,13 @@
 package com.home.mapper;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.home.dto.EmployeeDto;
+import com.home.dto.EmployeeDtoRegistration;
 import com.home.entity.Employee;
+import com.home.entity.EmployeeInfo;
 
 public interface EmployeeMapper {
 
@@ -19,14 +22,10 @@ public interface EmployeeMapper {
 		dto.setCabinet(employee.getCabinet());
 		dto.setScientificRank(employee.getScientificRank());
 		dto.setPosition(employee.getPosition());
-		dto.setDepartment(employee.getDepartment());
-		dto.setWards(employee.getWards());
 		dto.setRegistrationDate(employee.getRegistrationDate());
 		dto.setTheRightToWorkWithDatabase(employee.isTheRightToWorkWithDatabase());
-		dto.setAdmissionsJournals(employee.getAdmissionsJournals());
-		dto.setImageName(employee.getEmployeeInfo().getImageName());
-		dto.setLogin(employee.getEmployeeInfo().getLogin());
-		dto.setPassword(employee.getEmployeeInfo().getPassword());
+		dto.setExaminations(employee.getExaminations());
+		dto.setEmployeeInfo(employee.getEmployeeInfo());
 		
 		return dto;
 	}
@@ -46,17 +45,54 @@ public interface EmployeeMapper {
 			dto.setCabinet(employees.get(i).getCabinet());
 			dto.setScientificRank(employees.get(i).getScientificRank());
 			dto.setPosition(employees.get(i).getPosition());
-			dto.setDepartment(employees.get(i).getDepartment());
-			dto.setWards(employees.get(i).getWards());
 			dto.setRegistrationDate(employees.get(i).getRegistrationDate());
 			dto.setTheRightToWorkWithDatabase(employees.get(i).isTheRightToWorkWithDatabase());
-			dto.setAdmissionsJournals(employees.get(i).getAdmissionsJournals());
-			dto.setImageName(employees.get(i).getEmployeeInfo().getImageName());
-			dto.setLogin(employees.get(i).getEmployeeInfo().getLogin());
-			dto.setPassword(employees.get(i).getEmployeeInfo().getPassword());
+			dto.setExaminations(employees.get(i).getExaminations());
+			dto.setEmployeeInfo(employees.get(i).getEmployeeInfo());
 			
 			dtos.add(dto);
 		}
+		
 		return dtos;
 	}
+	
+	
+	public static Employee dtoRegistrationToEmployee(EmployeeDtoRegistration dtoRegistration) {
+		
+		Employee employee = new Employee();
+		
+		employee.setFullName(dtoRegistration.getFullName());
+		employee.setEmail(dtoRegistration.getEmail());
+		employee.setPhoneNumber(dtoRegistration.getPhoneNumber());
+		employee.setCabinet(dtoRegistration.getCabinet());
+		employee.setScientificRank(dtoRegistration.getScientificRank());
+		employee.setPosition(dtoRegistration.getPosition());
+		employee.setRegistrationDate(LocalDate.now());
+		employee.setTheRightToWorkWithDatabase(dtoRegistration.isTheRightToWorkWithDatabase());
+		employee.setEmployeeInfo(new EmployeeInfo());
+		employee.getEmployeeInfo().setLogin(dtoRegistration.getLogin());
+		employee.getEmployeeInfo().setPassword(dtoRegistration.getPassword());
+		
+		return employee;
+	}
+	
+	public static Employee dtoToEmployee(EmployeeDto dto) {
+		
+		Employee employee = new Employee();
+		
+		employee.setId(dto.getId());
+		employee.setFullName(dto.getFullName());
+		employee.setEmail(dto.getEmail());
+		employee.setPhoneNumber(dto.getPhoneNumber());
+		employee.setCabinet(dto.getCabinet());
+		employee.setScientificRank(dto.getScientificRank());
+		employee.setPosition(dto.getPosition());
+		employee.setRegistrationDate(dto.getRegistrationDate());
+		employee.setTheRightToWorkWithDatabase(dto.isTheRightToWorkWithDatabase());
+		employee.setEmployeeInfo(new EmployeeInfo());
+		employee.setEmployeeInfo(dto.getEmployeeInfo());
+		
+		return employee;
+	}
+	
 }
