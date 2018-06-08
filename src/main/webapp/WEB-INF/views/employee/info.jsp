@@ -11,6 +11,11 @@
 </head>
 <body>
 
+	<div class="btn-toolbar" style="margin-top: 30px; margin-left: 95px">
+		<a href="/employee" class="btn btn-primary"><span
+			class="glyphicon glyphicon-arrow-left"></span> Назад </a>
+	</div>
+
 
 	<div class="container">
 		<div class="row">
@@ -85,9 +90,16 @@
 
 								<div class="clearfix"></div>
 								<div class="bot-border"></div>
-								
+
 								<div class="col-sm-5 col-xs-6 tital ">Кнопки:</div>
-								<div class="col-sm-7"></div>
+								<div class="col-sm-7">
+									<a href="/employee/edit/${ employeeDtoModel.id }"
+										class="btn btn-xs btn-warning"><span
+										class="glyphicon glyphicon-edit"></span> Редагувати</a> <a
+										href="/employee/delete/${ employeeDtoModel.id }"
+										class="btn btn-xs btn-danger"><span
+										class="glyphicon glyphicon-trash"></span> Видалити</a>
+								</div>
 							</div>
 
 
@@ -100,7 +112,7 @@
 		</div>
 	</div>
 
-	<div class="alert alert-info">
+	<!--<div class="alert alert-info">
 		<strong>Список обстежень ... </strong>
 	</div>
 
@@ -129,15 +141,6 @@
 				</tr>
 			</c:forEach>
 		</tbody>
-	</table>
-	</div>
-
-	<div class="navbar navbar-default navbar-fixed-bottom">
-		<div class="container">
-			<p class="navbar-text pull-center">
-				<small>© 2018 - by MarkiyanSayevich , All rights reserved</small>
-			</p>
-		</div>
-	</div>
+	</table>-->
 </body>
 </html>

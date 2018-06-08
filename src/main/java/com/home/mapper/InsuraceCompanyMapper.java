@@ -53,4 +53,18 @@ public interface InsuraceCompanyMapper {
 		
 		return company;
 	}
+	
+	public static InsuranceCompany editDtoToCompany(InsuranceCompanyDto companyDto) {
+		
+		InsuranceCompany company = new InsuranceCompany();
+		
+		company.setId(companyDto.getId());
+		company.setName(companyDto.getName());
+		company.setAddress(companyDto.getAddress());
+		company.setPostIndex(companyDto.getPostIndex());
+		company.setType(companyDto.getType());
+		company.setPatients(companyDto.getPatients());
+		
+		return company;
+	}
 }

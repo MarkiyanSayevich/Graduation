@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.home.dto.EmployeeDto;
 import com.home.dto.EmployeeDtoRegistration;
+import com.home.dto.EmployeeEditDto;
 import com.home.entity.Employee;
 import com.home.entity.EmployeeInfo;
 
@@ -95,4 +96,47 @@ public interface EmployeeMapper {
 		return employee;
 	}
 	
+	
+	public static EmployeeEditDto employeeToEdit(Employee employee) {
+		
+		EmployeeEditDto dto = new EmployeeEditDto();
+	
+		dto.setId(employee.getId());
+		dto.setFullName(employee.getFullName());
+		dto.setEmail(employee.getEmail());
+		dto.setCabinet(employee.getCabinet());
+		dto.setPhoneNumber(employee.getPhoneNumber());
+		dto.setScientificRank(employee.getScientificRank());
+		dto.setPosition(employee.getPosition());
+		dto.setRegistrationDate(employee.getRegistrationDate());
+		dto.setTheRightToWorkWithDatabase(employee.isTheRightToWorkWithDatabase());
+		dto.setImageName(employee.getEmployeeInfo().getImageName());
+		dto.setExaminations(employee.getExaminations());
+		dto.setLogin(employee.getEmployeeInfo().getLogin());
+		dto.setPassword(employee.getEmployeeInfo().getPassword());
+		
+		return dto;
+	}
+	
+	public static Employee editToEmployee(EmployeeEditDto dto) {
+		
+		Employee employee = new Employee();
+		
+		employee.setId(dto.getId());
+		employee.setFullName(dto.getFullName());
+		employee.setEmail(dto.getEmail());
+		employee.setPhoneNumber(dto.getPhoneNumber());
+		employee.setCabinet(dto.getCabinet());
+		employee.setScientificRank(dto.getScientificRank());
+		employee.setPosition(dto.getPosition());
+		employee.setRegistrationDate(dto.getRegistrationDate());
+		employee.setTheRightToWorkWithDatabase(dto.isTheRightToWorkWithDatabase());
+		employee.setExaminations(dto.getExaminations());
+		employee.setEmployeeInfo(new EmployeeInfo());
+		employee.getEmployeeInfo().setImageName(dto.getImageName());
+		employee.getEmployeeInfo().setLogin(dto.getLogin());
+		employee.getEmployeeInfo().setPassword(dto.getPassword());
+		
+		return employee;
+	}
 }

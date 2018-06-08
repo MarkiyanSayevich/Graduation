@@ -32,12 +32,6 @@ public class InsuranceCompany extends BaseEntity{
 	@Column(name="post_index")
 	private String postIndex;
 	
-	@OneToMany(mappedBy="insuranceCompany",
-			cascade = {
-			CascadeType.DETACH, 
-			CascadeType.MERGE,	
-			CascadeType.PERSIST,
-			CascadeType.REFRESH
-		})
+	@OneToMany(mappedBy="insuranceCompany")
 	private List<Patient> patients = new ArrayList<>();
 }

@@ -10,16 +10,19 @@
 </head>
 <body>
 
-<div class="btn-toolbar" style="margin-top: 30px; margin-left: 105px">
-		<a href="/company" class="btn btn-primary"><span
+	<div class="btn-toolbar" style="margin-top: 30px; margin-left: 105px">
+		<a href="#" class="btn btn-primary"><span
 			class="glyphicon glyphicon-arrow-left"></span> Назад </a>
 	</div>
 
-	<form:form action="/company/add"
-		modelAttribute="companyDtoRegistrationModel" method="POST"
-		cssClass="form-horizontal">
+	<form:form action="/company/info/edit" modelAttribute="companyDtoModel"
+		method="POST" cssClass="form-horizontal">
+
+		<form:hidden path="id" />
+		<form:hidden path="patients" />
+
 		<fieldset>
-			<legend class="text-center">Нова страхова компанія</legend>
+			<legend class="text-center">Редагувати страхову компанію</legend>
 
 			<div class="form-group">
 				<form:label cssClass="col-md-4 control-label" path="name">Назва:</form:label>
@@ -63,6 +66,7 @@
 
 		</fieldset>
 	</form:form>
+
 
 </body>
 </html>

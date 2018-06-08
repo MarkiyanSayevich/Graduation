@@ -53,18 +53,19 @@ public class Patient extends BaseEntity{
 	@Column(name="registration_date")
 	private LocalDate registrationDate;
 	
-	@OneToMany(mappedBy="patient",cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="patient")
 	List<AdmissionsJournal> admissionsJournals = new ArrayList<>();
 	
-	@OneToMany(mappedBy="patient",cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="patient")
 	List<Examination> examinations = new ArrayList<>();
 	
-	@ManyToOne(cascade = {
-			CascadeType.DETACH, 
-			CascadeType.MERGE,	
-			CascadeType.PERSIST,
-			CascadeType.REFRESH
-		})
+//	@ManyToOne(cascade = {
+//			CascadeType.DETACH, 
+//			CascadeType.MERGE,	
+//			CascadeType.PERSIST,
+//			CascadeType.REFRESH
+//		})
+	@ManyToOne
 	@JoinColumn(name="insuranceCompany_id")
 	private InsuranceCompany insuranceCompany;
 }

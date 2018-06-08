@@ -9,33 +9,34 @@
 <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 </head>
 <body>
-
-
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="#"> Поліклініка </a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li><a href="/main-page">Головна</a></li>
+				<!-- <li class="active"><a href="/main-page">Головна</a></li>-->
 				<li><a href="/employee"> Лікарі </a></li>
 				<li><a href="/patient"> Пацієнти </a></li>
 				<li class="active"><a href="/journal"> Журнал обстежень</a></li>
 				<li><a href="/company"> Страхові компанії</a></li>
-				<li><a href="#">Про програму</a></li>
 			</ul>
 		</div>
 	</nav>
 
 	<div class="btn-toolbar" style="margin-bottom: 30px; margin-left: 10px">
-		<a href="/journal/examination/create/${ patientIdModel }"
+		<a href="/journal" class="btn btn-primary"><span
+			class="glyphicon glyphicon-arrow-left"></span> Назад </a> <a
+			href="/journal/examination/create/${ patientIdModel }/${ journalIdModel }"
 			class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span>
 			Додати </a>
+
+
 	</div>
 
 
 	<div class="alert alert-info">
-	<h4>Про журнал</h4>
+		<h4>Про журнал</h4>
 		<ul class="list-group">
 			<li class="list-group-item">Нотатка: ${ notesModel }</li>
 			<li class="list-group-item">Загальна ціна: ${ priceModel }</li>
@@ -62,7 +63,7 @@
 					<td>${ examination.id }</td>
 					<td>${ examination.patient.fullName }</td>
 					<td>${ examination.registrationDate }</td>
-					<td><a href="/journal/examination/info/${ examination.id }"
+					<td><a href="/journal/examination/info/${ examination.id }/${ patientIdModel }/${ journalIdModel }"
 						class="btn btn-xs btn-primary"><span
 							class="glyphicon glyphicon-exclamation-sign"></span> Інфо</a> <a
 						href="/journal/examination/delete/${ examination.patient.id }/${ examination.id }"

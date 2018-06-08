@@ -50,12 +50,7 @@ public class Employee extends BaseEntity{
 	@Column(name="the_right_to_work_with_database")
 	private boolean theRightToWorkWithDatabase;
 	
-	@OneToMany(mappedBy="employee",cascade = {
-			CascadeType.DETACH, 
-			CascadeType.MERGE,	
-			CascadeType.PERSIST,
-			CascadeType.REFRESH
-		})
+	@OneToMany(mappedBy="employee")
 	private List<Examination> examinations = new ArrayList<>();
 	
 	@OneToOne(cascade = CascadeType.ALL , fetch = FetchType.EAGER)

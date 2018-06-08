@@ -26,12 +26,11 @@
 				<a class="navbar-brand" href="#"> Поліклініка </a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li><a href="/main-page">Головна</a></li>
+				<!-- <li class="active"><a href="/main-page">Головна</a></li>-->
 				<li><a href="/employee"> Лікарі </a></li>
 				<li class="active"><a href="/patient"> Пацієнти </a></li>
 				<li><a href="/journal"> Журнал обстежень</a></li>
 				<li><a href="/company"> Страхові компанії</a></li>
-				<li><a href="#">Про програму</a></li>
 			</ul>
 			<form:form cssClass="navbar-form navbar-right"
 				action="/patient/filter" modelAttribute="filterModel" method="GET">

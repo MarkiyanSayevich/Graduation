@@ -1,27 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ include file="/WEB-INF/taglib.jsp"%>
+    pageEncoding="UTF-8"%>
+    <%@ include file="/WEB-INF/taglib.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="/resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="/resources/css/bootstrap.min.css" >
 </head>
 <body>
 
 <div class="btn-toolbar" style="margin-top: 30px; margin-left: 105px">
-		<a href="/employee" class="btn btn-primary"><span
+		<a href="#" class="btn btn-primary"><span
 			class="glyphicon glyphicon-arrow-left"></span> Назад </a>
 	</div>
 
-	<form:form action="/employee/add"
-		modelAttribute="employeeDtoRegistrationModel" method="POST"
+	<form:form action="/employee/edit"
+		modelAttribute="employeeDtoModel" method="POST"
 		cssClass="form-horizontal">
 
-		<fieldset>
+	<form:hidden path="id"/>
+	<form:hidden path="registrationDate"/>
+	<form:hidden path="examinations"/>
+	<form:hidden path="imageName"/>
 
-			<legend class="text-center" >Новий Лікар</legend>
+		<fieldset>
+			
+
+			<legend class="text-center" >Редагувати інформацію про Лікаря</legend>
 
 			<div class="form-group">
 				<form:label cssClass="col-md-4 control-label" path="fullName">Повне ім'я:</form:label>
@@ -111,7 +117,6 @@
 			</div>
 
 		</fieldset>
-
 	</form:form>
 
 </body>

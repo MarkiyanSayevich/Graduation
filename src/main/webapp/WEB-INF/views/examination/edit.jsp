@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ include file="/WEB-INF/taglib.jsp"%>
+    pageEncoding="UTF-8"%>
+    <%@ include file="/WEB-INF/taglib.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,18 +10,22 @@
 </head>
 <body>
 
-	<div class="btn-toolbar" style="margin-top: 30px; margin-left: 105px">
-		<a href="/journal/examination/${patientIdModel}/${journalIdModel}" class="btn btn-primary"><span
+<div class="btn-toolbar" style="margin-top: 30px; margin-left: 105px">
+		<a href="#" class="btn btn-primary"><span
 			class="glyphicon glyphicon-arrow-left"></span> Назад </a>
 	</div>
 
-
-	<form:form action="/journal/examination/create" method="POST"
-		modelAttribute="examinationCreationDtoModel"
+	<form:form action="/journal/examination/info/edit" method="POST"
+		modelAttribute="examinationDtoModel"
 		cssClass="form-horizontal">
 
+	 <form:hidden path="id"/>
+	 <form:hidden path="registrationDate"/>
+	 <form:hidden path="age"/>
+	 <form:hidden path="patient"/>
+
 		<fieldset>
-			<legend class="text-center">Нове обстеження</legend>
+			<legend class="text-center">Редагувати обстеження</legend>
 
 			<input type="hidden" name="patientId" value="${ patientId }">
 
@@ -111,5 +115,6 @@
 
 		</fieldset>
 	</form:form>
+
 </body>
 </html>

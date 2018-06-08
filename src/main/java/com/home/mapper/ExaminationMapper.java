@@ -26,6 +26,7 @@ public interface ExaminationMapper {
 		examinationDto.setComplaints(examination.getComplaints());
 		examinationDto.setConclusion(examination.getConclusion());
 		examinationDto.setFactors(examination.getFactors());
+		examinationDto.setDiagnosis(examination.getDiagnosis());
 		examinationDto.setPatient(examination.getPatient());
 		examinationDto.setEmployee(examination.getEmployee());
 		
@@ -75,4 +76,25 @@ public interface ExaminationMapper {
 		return examination;
 	}
 	
+	
+	public static Examination editToExamination(ExaminationDto dto) {
+		
+		Examination examination = new Examination(); 
+		
+		examination.setId(dto.getId());
+		examination.setRegistrationDate(dto.getRegistrationDate());
+		examination.setAge(dto.getAge());
+		examination.setService(dto.getService());
+		examination.setPrice(dto.getPrice());
+		examination.setInstruments(dto.getInstruments());
+		examination.setMethods(dto.getMethods());
+		examination.setComplaints(dto.getComplaints());
+		examination.setConclusion(dto.getConclusion());
+		examination.setFactors(dto.getFactors());
+		examination.setDiagnosis(dto.getDiagnosis());
+		examination.setPatient(dto.getPatient());
+		examination.setEmployee(dto.getEmployee());
+		
+		return examination;
+	}
 }

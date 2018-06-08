@@ -6,7 +6,9 @@ import java.util.List;
 
 import com.home.dto.PatientDto;
 import com.home.dto.PatientDtoRegistration;
+import com.home.dto.PatientEditDto;
 import com.home.entity.Patient;
+import com.home.entity.enums.PatientStatus;
 
 public interface PatientMapper {
 
@@ -87,6 +89,48 @@ public interface PatientMapper {
 		patient.setRegistrationDate(dto.getRegistrationDate());
 		patient.setAdmissionsJournals(dto.getAdmissionsJournals());
 		patient.setExaminations(dto.getExaminations());
+		patient.setInsuranceCompany(dto.getInsuranceCompany());
+		
+		return patient;
+	}
+	
+	public static PatientEditDto patientToEdit(Patient patient) {
+		
+		PatientEditDto dto = new PatientEditDto();
+		
+		dto.setId(patient.getId());
+		dto.setFullName(patient.getFullName());
+		dto.setYear(patient.getBirthday().getYear());
+		dto.setMounth(patient.getBirthday().getMonthValue());
+		dto.setDay(patient.getBirthday().getDayOfMonth());
+		dto.setGender(patient.getGender());
+		dto.setAddress(patient.getPhoneNumber());
+		dto.setPhoneNumber(patient.getPhoneNumber());
+		dto.setPatientCardNumber(patient.getPatientCardNumber());
+		dto.setPatientStatus(patient.getPatientStatus());
+		dto.setRegistrationDate(patient.getRegistrationDate());
+		dto.setAdmissionsJournals(patient.getAdmissionsJournals());
+		dto.setExaminations(patient.getExaminations());
+		dto.setInsuranceCompany(patient.getInsuranceCompany());
+		
+		return dto;
+	}
+	
+	public static Patient editToPatient(PatientEditDto dto){
+		
+		Patient patient = new Patient();
+		
+		patient.setId(dto.getId());
+		patient.setFullName(dto.getFullName());
+		patient.setBirthday(LocalDate.of(dto.getYear(), dto.getMounth(), dto.getDay()));
+		patient.setGender(dto.getGender());
+		patient.setAddress(dto.getAddress());
+		patient.setPhoneNumber(dto.getPhoneNumber());
+		patient.setPatientCardNumber(dto.getPatientCardNumber());
+		patient.setPatientStatus(dto.getPatientStatus());
+		patient.setRegistrationDate(dto.getRegistrationDate());
+		patient.setExaminations(dto.getExaminations());
+		patient.setAdmissionsJournals(dto.getAdmissionsJournals());
 		patient.setInsuranceCompany(dto.getInsuranceCompany());
 		
 		return patient;

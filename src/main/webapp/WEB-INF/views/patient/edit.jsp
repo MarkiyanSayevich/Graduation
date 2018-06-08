@@ -1,23 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ include file="/WEB-INF/taglib.jsp"%>
+    pageEncoding="UTF-8"%>
+    <%@ include file="/WEB-INF/taglib.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="/resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="/resources/css/bootstrap.min.css" >
 </head>
 <body>
 
-	<div class="btn-toolbar" style="margin-top: 30px; margin-left: 105px">
-		<a href="/patient" class="btn btn-primary"><span
+<div class="btn-toolbar" style="margin-top: 30px; margin-left: 105px">
+		<a href="#" class="btn btn-primary"><span
 			class="glyphicon glyphicon-arrow-left"></span> Назад </a>
 	</div>
 
-	<form:form action="/patient/add"
-		modelAttribute="patientDtoRegistrationModel" method="POST"
+	<form:form action="/patient/info/edit"
+		modelAttribute="patientEditRegistration" method="POST"
 		cssClass="form-horizontal">
+
+		<form:hidden path="id"/>
+		<form:hidden path="registrationDate"/>
+		<form:hidden path="admissionsJournals"/>
+		<form:hidden path="examinations"/>
 
 		<fieldset>
 
@@ -111,7 +116,7 @@
 				<div class="col-md-4">
 
 					<form:select path="insuranceCompany" cssClass="form-control">
-						<form:options items="${ companyModel }" itemLabel="name" />
+						<form:options items="${ companiesModel }" itemLabel="name" />
 					</form:select>
 				</div>
 			</div>
@@ -126,5 +131,6 @@
 		</fieldset>
 
 	</form:form>
+
 </body>
 </html>
