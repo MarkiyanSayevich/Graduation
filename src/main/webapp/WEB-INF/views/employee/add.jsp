@@ -28,6 +28,7 @@
 				<div class="col-md-4">
 					<form:input type="text" placeholder="Повне ім'я"
 						cssClass="form-control input-md" path="fullName" />
+						<form:errors path="fullName" cssClass="help-block"></form:errors>
 				</div>
 			</div>
 
@@ -45,6 +46,7 @@
 				<div class="col-md-4">
 					<form:input type="text" placeholder="+380*********"
 						cssClass="form-control input-md" path="phoneNumber" />
+						<form:errors path="phoneNumber" cssClass="help-block"></form:errors>
 				</div>
 			</div>
 
@@ -70,6 +72,7 @@
 				<div class="col-md-4">
 					<form:input type="text" placeholder="Посада"
 						cssClass="form-control input-md" path="position" />
+						<form:errors path="position" cssClass="help-block"></form:errors>
 				</div>
 			</div>
 

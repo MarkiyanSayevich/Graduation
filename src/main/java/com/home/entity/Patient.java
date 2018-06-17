@@ -59,12 +59,6 @@ public class Patient extends BaseEntity{
 	@OneToMany(mappedBy="patient")
 	List<Examination> examinations = new ArrayList<>();
 	
-//	@ManyToOne(cascade = {
-//			CascadeType.DETACH, 
-//			CascadeType.MERGE,	
-//			CascadeType.PERSIST,
-//			CascadeType.REFRESH
-//		})
 	@ManyToOne
 	@JoinColumn(name="insuranceCompany_id")
 	private InsuranceCompany insuranceCompany;

@@ -40,9 +40,11 @@
 						path="name" />
 				</div>
 				<form:select cssClass="form-control" path="size">
-					<form:option value="5">5</form:option>
 					<form:option value="10">10</form:option>
 					<form:option value="20">20</form:option>
+					<form:option value="30">30</form:option>
+					<form:option value="40">40</form:option>
+					<form:option value="50">50</form:option>
 				</form:select>
 				<button type="submit" class="btn btn-primary">Знайти</button>
 			</form:form>
@@ -76,7 +78,7 @@
 					<td><a
 						href="/journal/examination/${ journal.patient.id }/${ journal.id }"
 						class="btn btn-xs btn-primary"><span
-							class="glyphicon glyphicon-exclamation-sign"></span> Інфо</a> <a
+							class="glyphicon glyphicon-exclamation-sign"></span> Обстеження</a> <a
 						href="/journal/delete/${ journal.id }"
 						class="btn btn-xs btn-primary"><span
 							class="glyphicon glyphicon-trash"></span> Видалити</a></td>

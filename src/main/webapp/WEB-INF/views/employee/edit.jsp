@@ -112,7 +112,7 @@
 			<div class="form-group">
 				<div class="col-md-12">
 					<button type="submit" class="btn btn-primary center-block">
-						Додати</button>
+						Редагувати</button>
 				</div>
 			</div>
 

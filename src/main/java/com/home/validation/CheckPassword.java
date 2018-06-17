@@ -12,10 +12,11 @@ import javax.validation.Payload;
 
 @Retention(RUNTIME)
 @Target({ FIELD, METHOD })
-@Constraint(validatedBy=CheckIfEmployeeExistValidation.class)
-public @interface CheckIfEmployeeExist {
+@Constraint(validatedBy=CheckPasswordValidation.class)
+public @interface CheckPassword {
 
-	String message() default "Лікар не знайдений або не має доступу до бази даних";
+	String message() default "Пароль не правильний";
 	Class<?>[] groups() default{};
 	Class<? extends Payload>[] payload() default{};
+	
 }

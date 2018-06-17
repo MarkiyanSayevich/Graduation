@@ -9,22 +9,22 @@
 <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
 </head>
 <body>
-	<nav class="navbar navbar-default">
+	<!--  <nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<a class="navbar-brand" href="#"> Поліклініка </a>
 			</div>
 			<ul class="nav navbar-nav">
-				<!-- <li class="active"><a href="/main-page">Головна</a></li>-->
+				 <li class="active"><a href="/main-page">Головна</a></li>
 				<li><a href="/employee"> Лікарі </a></li>
 				<li><a href="/patient"> Пацієнти </a></li>
 				<li class="active"><a href="/journal"> Журнал обстежень</a></li>
 				<li><a href="/company"> Страхові компанії</a></li>
 			</ul>
 		</div>
-	</nav>
+	</nav> -->
 
-	<div class="btn-toolbar" style="margin-bottom: 30px; margin-left: 10px">
+	<div class="btn-toolbar" style="margin-bottom: 15px; margin-left: 10px; margin-top: 15px">
 		<a href="/journal" class="btn btn-primary"><span
 			class="glyphicon glyphicon-arrow-left"></span> Назад </a> <a
 			href="/journal/examination/create/${ patientIdModel }/${ journalIdModel }"
@@ -52,7 +52,7 @@
 			<tr>
 				<th>Id</th>
 				<th>Ім'я пацієнта</th>
-				<th>Дата регістрації</th>
+				<th>Дата створення</th>
 				<th>Кнопки</th>
 			</tr>
 		</thead>

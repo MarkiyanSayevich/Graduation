@@ -5,12 +5,15 @@ import static com.home.mapper.EmployeeMapper.dtoRegistrationToEmployee;
 import java.io.IOException;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -154,7 +157,11 @@ public class EmployeeController {
 	}
 	
 	@PostMapping("/employee/add")
-	public String confirmEmployeeAdd(@ModelAttribute("employeeDtoRegistrationModel") EmployeeDtoRegistration registrationDto) {
+	public String confirmEmployeeAdd(@Valid @ModelAttribute("employeeDtoRegistrationModel") EmployeeDtoRegistration registrationDto, BindingResult br) {
+		
+		if(br.hasErrors()) {
+			return "employee/add";
+		}
 		
 		Employee employee = new Employee();
 		

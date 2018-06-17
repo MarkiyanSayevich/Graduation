@@ -40,9 +40,11 @@
 						path="name" />
 				</div>
 				<form:select cssClass="form-control" path="size">
-					<form:option value="5">5</form:option>
 					<form:option value="10">10</form:option>
 					<form:option value="20">20</form:option>
+					<form:option value="30">30</form:option>
+					<form:option value="40">40</form:option>
+					<form:option value="50">50</form:option>
 				</form:select>
 				<button type="submit" class="btn btn-primary">Знайти</button>
 			</form:form>

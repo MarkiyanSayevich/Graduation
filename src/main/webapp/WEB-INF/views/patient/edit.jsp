@@ -26,7 +26,7 @@
 
 		<fieldset>
 
-			<legend class="text-center">Новий Пацієнт</legend>
+			<legend class="text-center">Редагувати інформацію про пацієнта</legend>
 
 			<div class="form-group">
 				<form:label cssClass="col-md-4 control-label" path="fullName">Повне ім'я:</form:label>

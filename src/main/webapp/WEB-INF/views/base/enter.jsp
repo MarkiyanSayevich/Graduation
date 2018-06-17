@@ -16,7 +16,7 @@
 </head>
 <body>
 
-	<div class="container">
+	<div class="container" style="margin-top: 150px">
 		<form:form cssClass="form-horizontal" action="/" method="POST"
 			modelAttribute="enterModel">
 			<fieldset>

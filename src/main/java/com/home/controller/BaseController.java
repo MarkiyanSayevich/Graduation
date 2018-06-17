@@ -64,6 +64,6 @@ public class BaseController {
 		if(br.hasErrors()) {
 			return "base/enter";
 		}
-		return "redirect:/main-page";
+		return "redirect:/employee";
 	}
 }
